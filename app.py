@@ -126,8 +126,8 @@ def display_lime(data=data):
         return f"<img src='data:image/png;base64,{image_lime}'/>" 
         '''
 
-
-app.run()
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=8080, debug=True)
 
 
 

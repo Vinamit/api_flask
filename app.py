@@ -77,6 +77,7 @@ def display_features():
 
 # http://127.0.0.1:5000/viability/?id=126208
 # http://127.0.0.1:5000/viability/?id=333039
+# https://test-flask1-84968da5768b.herokuapp.com//viability/?id=280509
 @app.route('/viability/')
 def get_score():
     id = float(request.args.get('id'))
@@ -93,6 +94,9 @@ def get_score():
 
 # http://127.0.0.1:5000/lime/?n=10&id=126208
 # http://127.0.0.1:5000/lime/?n=15&id=333039
+# https://test-flask1-84968da5768b.herokuapp.com//lime/?n=15&id=333039
+# https://test-flask1-84968da5768b.herokuapp.com//lime/?n=15&id=280509
+
 @app.route("/lime/")
 def display_lime(data=data):
     n = request.args.get('n', type=int)
@@ -127,7 +131,7 @@ def display_lime(data=data):
         '''
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=8080, debug=True)
+    app.run(debug=True)
 
 
 
